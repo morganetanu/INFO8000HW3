@@ -16,7 +16,7 @@ Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by press
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
 
 ```{r}
-install.packages(c("ggplot2","devtools", "dplyr", "stringer"))
+install.packages(c("ggplot2","devtools", "dplyr", "stringer", "tidyverse"))
 install.packages(c("maps", "mapdata"))
 
 library(ggplot2)
@@ -26,20 +26,70 @@ library(mapdata)
 library(plyr)
 library(dplyr)
 library(readr)
+library(tidyverse)
+```
+#Install Packages and Libraries
+
+```{r}
 PIREPS <- read_csv("C:/Users/Nick Morgan/Desktop/stormattr_201701010000_201705010000 (1).csv")
-  cols(
-    VALID = col_double(),
-    URGENT = col_logical(),
-    AIRCRAFT = col_character(),
-    REPORT = col_character(),
-    LAT = col_character(),
-    LON = col_character()
-      )
+cols(
+  VALID = col_double(),
+  URGENT = col_logical(),
+  AIRCRAFT = col_character(),
+  REPORT = col_character(),
+  LAT = col_character(),
+  LON = col_character()
+)
+```
+#Import CSV File
 
-count(PIREPS, 'AIRCRAFT')
-AircraftOnly <- PIREPS[c(3)]
-ReportOnly <- PIREPS[c(4)]
-LatLong <- PIREPS[5:6]
+```{r}
+AircraftOnly <- PIREPS %>%
+  select(AIRCRAFT)%>%
+  filter(AIRCRAFT=='B717'|AIRCRAFT=='B737'|AIRCRAFT=='B747'|AIRCRAFT=='B757'|AIRCRAFT=='B767')
+  DeltaPlanes<-table(AircraftOnly)
+  DeltaPlanes2<-data.frame(DeltaPlanes)
+  barplot(DeltaPlanes2$Freq, main = "Reports by Type of Aircraft", xlab = "Aircraft Type", ylab = "Number of Reports", ylim = c(0,40000), names.arg = c("B717","B737", "B747", "B747", "B757"))
+```
+#Filter Reports by 5 most popularly used commercial plane
 
+```{r}
+PIREPS2<-read_csv("C:/Users/Nick Morgan/Desktop/Filteredstormattr_201701010000_201705010000.csv")
+LatLong <-data.frame(PIREPS2) %>%
+  select(LAT,LON)  %>%
+  filter(LAT>="0" & LON<="0")
+USA<-get_map('usa', zoom=4)
+ggmap(USA)+
+  stat_density2d(
+    aes(x = LON, y = LAT, fill = ..level.., alpha = ..level..,show_guide=FALSE),
+    data = LatLong,
+    geom = "polygon",
+    bins = 20)+
+  scale_fill_gradient(low = "black", high = "red") +                           #change display colors
+  theme(legend.position="none")+                                                    #no legend
+  ggtitle("Density of Pilot Reports")+                                          #title name
+  theme(plot.title = element_text(lineheight=3.5, face="bold"))                  #title graphics
+   
+```
+#Created Kernel Density Map
+#Defines areas where most reports have occured
+
+```{r}
+testforturb<-data.frame(PIREPS, stringsAsFactors = FALSE) %>%
+  filter(str_detect(PIREPS$REPORT,"TB"))
+testforturb$LON <- as.numeric(as.character(testforturb$LON))
+testforturb$LAT <- as.numeric(as.character(testforturb$LAT))
+ggmap(USA)+ggtitle("Pilot Reports Indicating Turbulence")+
+  geom_point(data = testforturb, aes(x = LON, y = LAT), color= "red", alpha = 0.1, size = 1)
+```
+#Indicates Reports Where Turbulence Occured
+```
+```{r}
+MODTurb<-data.frame(PIREPS, stringsAsFactors = FALSE) %>%
+  filter(str_detect(PIREPS$REPORT,"MOD"))
+MODTurb$LON <- as.numeric(as.character(MODTurb$LON))
+MODTurb$LAT <- as.numeric(as.character(MODTurb$LAT))
+ggmap(USA)+ggtitle("Pilot Reports Indicating MODERATE Turbulence")+
+  geom_point(data = MODTurb, aes(x = LON, y = LAT), color= "black", alpha = 0.1, size = 1)
 ```
 

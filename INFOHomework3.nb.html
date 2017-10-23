@@ -185,65 +185,12 @@ $(document).ready(function () {
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhjKFwiZ2dwbG90MlwiLFwiZGV2dG9vbHNcIiwgXCJkcGx5clwiLCBcInN0cmluZ2VyXCIpKVxuYGBgIn0= -->
-<pre class="r"><code>install.packages(c(&quot;ggplot2&quot;,&quot;devtools&quot;, &quot;dplyr&quot;, &quot;stringer&quot;))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY291bnQoUElSRVBTLCAnQUlSQ1JBRlQnKVxuXG5gYGAifQ== -->
+<pre class="r"><code>count(PIREPS, 'AIRCRAFT')
+</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSW5zdGFsbGluZyBwYWNrYWdlcyBpbnRvIJFDOi9Vc2Vycy9OaWNrIE1vcmdhbi9Eb2N1bWVudHMvUi93aW4tbGlicmFyeS8zLjSSXG4oYXMgkWxpYpIgaXMgdW5zcGVjaWZpZWQpXG4ifQ== -->
-<pre><code>Installing packages into 㤼㸱C:/Users/Nick Morgan/Documents/R/win-library/3.4㤼㸲
-(as 㤼㸱lib㤼㸲 is unspecified)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBpbnN0YWxsLnBhY2thZ2VzIDpcbiAgcGFja2FnZSDigJhzdHJpbmdlcuKAmSBpcyBub3QgYXZhaWxhYmxlIChmb3IgUiB2ZXJzaW9uIDMuNC4yKVxuIn0= -->
-<pre><code>Warning in install.packages :
-  package ‘stringer’ is not available (for R version 3.4.2)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoidHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvMy40L2dncGxvdDJfMi4yLjEuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAyNzg0NzA4IGJ5dGVzICgyLjcgTUIpXG5kb3dubG9hZGVkIDIuNyBNQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi8zLjQvZGV2dG9vbHNfMS4xMy4zLnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggNDQzOTI0IGJ5dGVzICg0MzMgS0IpXG5kb3dubG9hZGVkIDQzMyBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL3dpbmRvd3MvY29udHJpYi8zLjQvZHBseXJfMC43LjQuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAyODg3NTQ4IGJ5dGVzICgyLjggTUIpXG5kb3dubG9hZGVkIDIuOCBNQlxuIn0= -->
-<pre><code>trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/ggplot2_2.2.1.zip'
-Content type 'application/zip' length 2784708 bytes (2.7 MB)
-downloaded 2.7 MB
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/devtools_1.13.3.zip'
-Content type 'application/zip' length 443924 bytes (433 KB)
-downloaded 433 KB
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/dplyr_0.7.4.zip'
-Content type 'application/zip' length 2887548 bytes (2.8 MB)
-downloaded 2.8 MB</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhnZ3Bsb3Qy4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhkZXZ0b29sc+KAmSBzdWNjZXNzZnVsbHkgdW5wYWNrZWQgYW5kIE1ENSBzdW1zIGNoZWNrZWRcbnBhY2thZ2Ug4oCYZHBseXLigJkgc3VjY2Vzc2Z1bGx5IHVucGFja2VkIGFuZCBNRDUgc3VtcyBjaGVja2VkXG5cblRoZSBkb3dubG9hZGVkIGJpbmFyeSBwYWNrYWdlcyBhcmUgaW5cblx0QzpcXFVzZXJzXFxOaWNrIE1vcmdhblxcQXBwRGF0YVxcTG9jYWxcXFRlbXBcXFJ0bXBHRVFJaTRcXGRvd25sb2FkZWRfcGFja2FnZXNcbiJ9 -->
-<pre><code>package ‘ggplot2’ successfully unpacked and MD5 sums checked
-package ‘devtools’ successfully unpacked and MD5 sums checked
-package ‘dplyr’ successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\Nick Morgan\AppData\Local\Temp\RtmpGEQIi4\downloaded_packages</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zdGFsbC5wYWNrYWdlcyhjKFwibWFwc1wiLCBcIm1hcGRhdGFcIikpXG5gYGAifQ== -->
-<pre class="r"><code>install.packages(c(&quot;maps&quot;, &quot;mapdata&quot;))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiSW5zdGFsbGluZyBwYWNrYWdlcyBpbnRvIOOkvOO4sUM6L1VzZXJzL05pY2sgTW9yZ2FuL0RvY3VtZW50cy9SL3dpbi1saWJyYXJ5LzMuNOOkvOO4slxuKGFzIOOkvOO4sWxpYuOkvOO4siBpcyB1bnNwZWNpZmllZClcbnRyeWluZyBVUkwgJ2h0dHBzOi8vY3Jhbi5yc3R1ZGlvLmNvbS9iaW4vd2luZG93cy9jb250cmliLzMuNC9tYXBzXzMuMi4wLnppcCdcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24vemlwJyBsZW5ndGggMzYzMTE4MSBieXRlcyAoMy41IE1CKVxuZG93bmxvYWRlZCAzLjUgTUJcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi93aW5kb3dzL2NvbnRyaWIvMy40L21hcGRhdGFfMi4yLTYuemlwJ1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi96aXAnIGxlbmd0aCAyNTA3MjM3NyBieXRlcyAoMjMuOSBNQilcbmRvd25sb2FkZWQgMjMuOSBNQlxuIn0= -->
-<pre><code>Installing packages into 㤼㸱C:/Users/Nick Morgan/Documents/R/win-library/3.4㤼㸲
-(as 㤼㸱lib㤼㸲 is unspecified)
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/maps_3.2.0.zip'
-Content type 'application/zip' length 3631181 bytes (3.5 MB)
-downloaded 3.5 MB
-
-trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.4/mapdata_2.2-6.zip'
-Content type 'application/zip' length 25072377 bytes (23.9 MB)
-downloaded 23.9 MB</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDigJhtYXBz4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxucGFja2FnZSDigJhtYXBkYXRh4oCZIHN1Y2Nlc3NmdWxseSB1bnBhY2tlZCBhbmQgTUQ1IHN1bXMgY2hlY2tlZFxuXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdEM6XFxVc2Vyc1xcTmljayBNb3JnYW5cXEFwcERhdGFcXExvY2FsXFxUZW1wXFxSdG1wR0VRSWk0XFxkb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
-<pre><code>package ‘maps’ successfully unpacked and MD5 sums checked
-package ‘mapdata’ successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-    C:\Users\Nick Morgan\AppData\Local\Temp\RtmpGEQIi4\downloaded_packages</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShnZ21hcClcbmBgYCJ9 -->
-<pre class="r"><code>library(ggplot2)
-library(ggmap)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbGlicmFyeShnZ21hcCkgOiB0aGVyZSBpcyBubyBwYWNrYWdlIGNhbGxlZCDigJhnZ21hcOKAmVxuIn0= -->
-<pre><code>Error in library(ggmap) : there is no package called ‘ggmap’</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gY291bnQoUElSRVBTLCBcIkFJUkNSQUZUXCIpIDogY291bGQgbm90IGZpbmQgZnVuY3Rpb24gXCJjb3VudFwiXG4ifQ== -->
+<pre><code>Error in count(PIREPS, &quot;AIRCRAFT&quot;) : could not find function &quot;count&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
